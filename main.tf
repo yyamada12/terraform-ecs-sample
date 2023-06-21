@@ -37,3 +37,13 @@ resource "aws_iam_role" "ecs_task_execution_role" {
     "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
   ]
 }
+
+####################################################
+# ECS Task Container Log Groups
+####################################################
+
+resource "aws_cloudwatch_log_group" "nginx-sample" {
+  name              = "/ecs/nginx-sample"
+  retention_in_days = 30
+}
+
